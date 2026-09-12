@@ -1,0 +1,10 @@
+technology,evidence_source,doi_or_url,role,admission_boundary
+PERC PV,"Abdallah, Ali & Kivambe (2023), Solar Energy 249, 268-277",10.1016/j.solener.2022.11.042,"Desert-field reliability and degradation context","Supports direction and uncertainty; does not numerically calibrate s0 or rho."
+PERC PV,"Kivambe et al. (2025), Solar Energy 295, 113555",10.1016/j.solener.2025.113555,"Three-year Qatar comparison of PERC/TOPCon/SHJ","Supports product heterogeneity and field context; not a universal family coefficient."
+TOPCon PV,"Kivambe et al. (2025), Solar Energy 295, 113555",10.1016/j.solener.2025.113555,"Three-year Qatar comparison of PERC/TOPCon/SHJ","Supports strong yield/PR potential and model-dependent degradation; not universal."
+TOPCon PV,"Sen et al. (2024), Solar Energy Materials and Solar Cells 272, 112877",10.1016/j.solmat.2024.112877,"Damp-heat reliability and bill-of-materials sensitivity","Supports a wide resilience envelope and explicit product/BOM caution."
+TOPCon PV,"Glunz et al. (2023), Progress in Photovoltaics 31, 341-359",10.1002/pip.3522,"TOPCon architecture and performance context","Supports technology relevance; not a field resilience calibration."
+SHJ/HJT PV,"Kivambe et al. (2025), Solar Energy 295, 113555",10.1016/j.solener.2025.113555,"Qatar desert performance and degradation","Directly supports evidence-conflicted interpretation."
+SHJ/HJT PV,"Lin et al. (2023), Nature Energy",10.1038/s41560-023-01255-2,"High-efficiency SHJ performance context","Supports performance potential; not desert durability calibration."
+CdTe PV,"U.S. DOE, Cadmium Telluride Photovoltaics Perspective Paper",https://www.energy.gov/cmei/systems/cadmium-telluride-photovoltaics-perspective-paper,"CdTe technology and hot-climate context","Supports technology relevance; not a four-family field calibration."
+CdTe PV,"Metzger et al. (2019), Nature Energy",10.1038/s41560-019-0446-7,"CdTe device-performance context","Supports technology maturity/performance context; not direct resilience calibration."
