@@ -1,0 +1,11 @@
+scenario,topcon_leader_sites,perc_leader_sites,shj_hjt_leader_sites,cdte_leader_sites
+baseline,9,1,0,0
+equal_suitability_and_resilience,9,1,0,0
+omit_suitability_E,4,6,0,0
+omit_suitability_M,10,0,0,0
+omit_suitability_C,10,0,0,0
+omit_suitability_OM,9,1,0,0
+omit_resilience_RT,9,1,0,0
+omit_resilience_RD,9,1,0,0
+omit_resilience_RH,9,1,0,0
+omit_resilience_RO,9,1,0,0

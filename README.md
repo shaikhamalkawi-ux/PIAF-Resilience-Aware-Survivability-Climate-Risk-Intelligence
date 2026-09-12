@@ -1,100 +1,83 @@
-# ECMX-D-26-01378 — reproducibility materials
+# ECMX-D-26-01378 revision reproducibility package
 
-This repository contains the revision-stage data, code, and deterministic outputs for the manuscript submitted to **Energy Conversion and Management: X** as **ECMX-D-26-01378**.
+This repository contains the analysis inputs, code, generated numerical tables, and the script that regenerates all publication figures for the major revision of:
 
-**Revised working title:** *A Resource–Resilience Framework for Historical Climate-Exposure Screening of Photovoltaic Infrastructure*
+**A Resource-Explicit Historical Climate-Context Framework for Resilience-Aware Photovoltaic Infrastructure Screening**
 
-The repository supports a **pre-feasibility screening study**. It does not provide field-validated degradation laws, bankability conclusions, project-finance outputs, or climate-change projections.
+The revision responds to reviewer concerns about comparability, omission of solar-resource magnitude, benchmark-dependent normalization, insufficiently reproducible technology scoring, narrow robustness testing, and inconsistencies between tables and figures.
 
-## What changed in the major revision
+## Main changes in the revision
 
-The revision responds directly to the external review:
-
-- The quantitative comparison is restricted to four comparable PV module families: **PERC, TOPCon, SHJ/HJT, and CdTe**.
-- Mean solar resource is included explicitly in the final resource–resilience screening score.
-- The climate term is described as a **benchmark-relative climate-context index**, not a universal physical risk scale. A value of zero means the lowest value in this benchmark, not zero physical stress.
-- The former 0.33/0.66 stress-regime thresholds were removed.
-- The former WSM/TOPSIS/VIKOR and market-price side analyses were removed because they were secondary to the paper and insufficiently documented in the initial submission.
-- The former ±10% Monte Carlo perturbation was removed. The revision uses deterministic climate-structure, technology-weight, and leave-one-location-out sensitivity tests instead.
-- All revised tables, figures, abstract values, and conclusions are generated from the same version-controlled inputs and script.
-
-## Core equation
-
-For PV family `i` at benchmark location `l`, the revised screening score is
-
-`A[i,l] = R[l] * S0[i] * exp(-lambda * C[l] * (1-rho[i]))`
-
-where:
-
-- `R[l] = mean_GHI[l] / max(mean_GHI)` is the positive relative solar-resource term;
-- `C[l]` is the benchmark-relative climate-context index;
-- `S0[i]` is the baseline-suitability scenario score reconstructed from five disclosed component scores and weights;
-- `rho[i]` is the resilience scenario score reconstructed from four disclosed component scores and weights;
-- `lambda = 1` in the reported baseline screen.
-
-The technology component values and weights are **declared screening scenarios, not field-calibrated family constants**.
+- The comparison is restricted to four comparable photovoltaic module families: PERC, TOPCon, SHJ/HJT, and CdTe.
+- Mean solar-resource magnitude is represented explicitly through a benchmark-relative resource term `R`.
+- The historical climate layer is described as a **benchmark-relative climate-context index**, not a calibrated physical-risk index.
+- The final screening score is `A = R * S0 * exp[-lambda * C * (1-rho)]`.
+- Technology component scores and model weights are declared screening-scenario inputs, not calibrated family constants.
+- The old WSM/TOPSIS/VIKOR comparison, market-price layer, fixed stress-regime thresholds, and narrow two-score Monte Carlo analysis are removed from the revised central argument.
+- Robustness is assessed with transparent structural sensitivity tests: leave-one-location-out normalization, equal/leave-one-component climate weighting, equal/leave-one-criterion technology weighting, a mean-temperature-only thermal sensitivity test, and a paired individual-descriptor reversal-margin audit.
+- Every numerical table and publication figure is regenerated from one script and one committed input set.
+- Individual technology-score sensitivity is audited by the minimum paired descriptor change needed to tie the central winner and runner-up at each site; these are deterministic reversal margins, not probability intervals.
 
 ## Repository structure
 
-```text
-data/
-  sites_climate_summary.csv          locked 2014–2023 climate summaries
-  pv_screening_components.csv        declared PV screening-component matrix
-  model_settings.csv                 declared model weights and lambda setting
-  technology_evidence_register.csv   source/claim-boundary register
-  nasa_power_query_urls.csv          exact NASA POWER API queries
-scripts/
-  run_analysis.py                    end-to-end deterministic revision analysis
-  fetch_nasa_power_daily.py          optional upstream NASA POWER retrieval
-outputs/
-  analysis_summary.json
-  sha256_manifest.csv
-  tables/*.csv                       generated numerical outputs
-  figures/*.png                      generated publication figures
-```
+- `data/sites_climate_summary.csv` - 2014-2023 NASA POWER summary statistics for the ten fixed geographic points.
+- `data/nasa_power_query_urls.csv` - exact NASA POWER Daily API queries used for each location.
+- `data/DATA_PROVENANCE.md` - acquisition and reproducibility boundary for the live NASA API versus the committed analysis snapshot.
+- `data/pv_screening_components.csv` - declared four-family PV screening component matrix.
+- `data/model_settings.csv` - declared baseline model weights and attenuation parameter.
+- `data/technology_evidence_register.csv` - evidence sources used to constrain interpretation of the technology scenarios.
+- `scripts/run_analysis.py` - deterministic analysis script that regenerates all tables and publication figures.
+- `outputs/tables/` - committed manuscript tables generated by the script.
+- `outputs/figures/` - created locally by the script; figure SHA-256 hashes are recorded in the manifest.
+- `outputs/analysis_summary.json` - compact machine-readable summary of the central results.
+- `outputs/sha256_manifest.csv` - SHA-256 manifest of the analysis inputs and generated outputs.
+- `literature/reviewer_support_evidence_matrix.csv` - reviewer-comment-to-source evidence map.
+- `literature/REVIEWER_SUPPORT_LITERATURE.md` - concise literature rationale.
+- `literature/SOURCE_LINKS.md` - checked DOI/publisher/official links for reviewer-targeted sources.
+- `literature/PAPERS_AND_DATA_LINKS.md` - acquisition/status list separating directly accessible items from items that may require library access.
+- `CITATION.cff` - citation metadata for the revision-stage reproducibility package.
 
-The tables and figures are generated by `scripts/run_analysis.py` and are intentionally reproducible rather than hand-edited.
-
-## Reproduce the revision analysis
+## Reproduce the analysis
 
 Python 3.10+ is recommended.
 
 ```bash
-python -m pip install -r requirements.txt
+python -m venv .venv
+# Windows: .venv\\Scripts\\activate
+# macOS/Linux: source .venv/bin/activate
+pip install -r requirements.txt
 python scripts/run_analysis.py
 ```
 
-Optional upstream retrieval of the NASA POWER daily files:
+A successful run prints the analysis summary and reports that 10 tables and 5 figures were written.
 
-```bash
-python scripts/fetch_nasa_power_daily.py
-```
+## Interpretation boundaries
 
-The live POWER archive may evolve. For the submitted revision, the committed climate-summary table is the version-controlled numerical input, while `nasa_power_query_urls.csv` records the exact source queries used for independent retrieval.
+This is a comparative pre-feasibility screening study. The following boundaries are intentional:
 
-## NASA POWER variables
+1. NASA POWER solar and meteorological products are satellite/model-derived analysis-ready data, not site instruments.
+2. `C=0` means the lowest climate-context value within this ten-location benchmark; it does **not** mean zero physical climate stress.
+3. The raw daily GHI and wind coefficients of variation include both seasonal and day-to-day variability. They are not interpreted as pure short-term volatility metrics.
+4. Technology component values and weights are declared screening scenarios. Literature constrains their direction and plausibility but does not numerically calibrate them as universal PV-family constants.
+5. The score is not a prediction of field degradation, energy yield, LCOE, bankability, or climate-change damage.
+6. A top-ranked PV family in this benchmark should not be interpreted as universally superior. Product design, bill of materials, deployment conditions, warranties, and field evidence remain decisive.
 
-The 2014-01-01 to 2023-12-31 point queries use:
+## Data provenance
 
-- `ALLSKY_SFC_SW_DWN` — all-sky surface shortwave downward irradiance;
-- `T2M` — 2 m mean air temperature;
-- `T2M_MAX` — 2 m maximum air temperature;
-- `RH2M` — 2 m relative humidity;
-- `WS10M` — 10 m wind speed.
+The climate summary is based on NASA POWER Daily API data for 2014-01-01 through 2023-12-31 using:
 
-NASA POWER is described in the manuscript as a **satellite/model-derived, analysis-ready gridded data source**, not as local station observations.
+- `ALLSKY_SFC_SW_DWN`
+- `T2M`
+- `T2M_MAX`
+- `RH2M`
+- `WS10M`
 
-## Interpretation limits
+The exact point coordinates and API query URLs are stored in `data/nasa_power_query_urls.csv`.
 
-- GHI and wind coefficients of variation are calculated on the raw daily series. They therefore combine seasonal and day-to-day variation; they are not isolated intermittency or ramping metrics.
-- Mean and maximum temperature are combined inside one heat component. They are not counted as two separate top-level climate criteria; a mean-temperature-only sensitivity is also reported.
-- The 10-location benchmark is purposive. The climate-context index is sample dependent, so leave-one-location-out sensitivity is reported explicitly.
-- The central scenario places TOPCon first at nine benchmark points and PERC first at Dunhuang. Technology-weight sensitivity changes some leaders, so the repository does **not** claim universal dominance of one PV family.
+## Version used for the revision
 
-## Citation / versioning
+Revision label: **ECMX-R2**
 
-For the journal revision, cite the repository URL together with the immutable Git commit SHA reported in the manuscript Data Availability statement. The commit SHA pins the exact data/code version used for the revised results.
+Repository: https://github.com/shaikhamalkawi-ux/PIAF-Resilience-Aware-Survivability-Climate-Risk-Intelligence
 
-## Contact
-
-Corresponding author: **Ghassan Malkawi** — gmalkawi@hct.ac.ae
+For the journal resubmission, the manuscript cites the exact immutable Git commit associated with the submitted reproducibility files. A DOI can additionally be added if the final release is archived through Zenodo or another DOI-minting repository.

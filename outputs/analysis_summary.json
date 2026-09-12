@@ -10,10 +10,12 @@
   },
   "worst_leave_one_out_spearman": 0.9333333333333332,
   "worst_leave_one_out_omission": "Dunhuang",
+  "minimum_paired_descriptor_reversal_margin": 0.025833333318930618,
+  "minimum_margin_location": "Dunhuang",
   "notes": [
     "Climate-context and technology weights are declared screening-scenario weights, not calibrated physical coefficients.",
     "GHI and wind coefficients of variation use the raw daily series and therefore combine seasonal and day-to-day variability.",
     "C=0 denotes the lowest value in this benchmark, not absence of physical climate stress.",
-    "PV family scores are conditional scenario outputs; no universal family superiority is claimed."
+    "PV-family scores are conditional scenario outputs; no universal family superiority is claimed."
   ]
 }

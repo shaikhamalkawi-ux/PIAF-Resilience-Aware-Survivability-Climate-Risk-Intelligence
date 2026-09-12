@@ -1,0 +1,11 @@
+omitted_location,n_remaining,spearman_rank_correlation,max_absolute_rank_shift,max_absolute_context_change
+Dunhuang,9,0.9333333333333332,2,0.3061190090177869
+Antofagasta,9,0.9833333333333333,1,0.08726455016726309
+NEOM Bay/Sharma,9,1.0,0,0.0
+Phoenix,9,1.0,0,0.0
+Alice Springs,9,1.0,0,0.0
+Ouarzazate,9,1.0,0,0.0
+Las Vegas,9,1.0,0,0.027630898731763998
+Aswan,9,1.0,0,0.02800351855881411
+Jodhpur,9,1.0,0,0.031213293655381502
+Abu Dhabi,9,1.0,0,0.04137441357968524

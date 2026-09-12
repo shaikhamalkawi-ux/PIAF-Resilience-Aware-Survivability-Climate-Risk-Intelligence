@@ -1,0 +1,3 @@
+metric,value
+Pearson correlation: mean T2M vs mean T2M_MAX,0.913959
+Interpretation,The two summaries are combined inside one heat component; mean-temperature-only sensitivity is reported.

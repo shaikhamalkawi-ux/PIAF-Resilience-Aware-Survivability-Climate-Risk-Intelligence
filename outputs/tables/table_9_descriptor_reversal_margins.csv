@@ -1,0 +1,11 @@
+location,winner,runner_up,score_ratio_winner_to_runner,minimum_paired_descriptor_delta,most_sensitive_descriptor
+Dunhuang,PERC PV,TOPCon PV,1.021291208780946,0.025833333318930618,E suitability descriptor
+Antofagasta,TOPCon PV,PERC PV,1.033195232980762,0.040029741272399715,E suitability descriptor
+Aswan,TOPCon PV,PERC PV,1.033377694491854,0.040246120309673006,E suitability descriptor
+Alice Springs,TOPCon PV,PERC PV,1.0375557572858978,0.04519012452338141,E suitability descriptor
+Jodhpur,TOPCon PV,SHJ/HJT PV,1.0438246289709683,0.06024335630594823,M suitability descriptor
+Abu Dhabi,TOPCon PV,SHJ/HJT PV,1.0447699116699227,0.06151533535797544,M suitability descriptor
+Las Vegas,TOPCon PV,SHJ/HJT PV,1.0461709588648553,0.06339850849339254,M suitability descriptor
+NEOM Bay/Sharma,TOPCon PV,SHJ/HJT PV,1.0481142533664718,0.06600641078277189,M suitability descriptor
+Phoenix,TOPCon PV,SHJ/HJT PV,1.0559238154804493,0.07643886996617817,M suitability descriptor
+Ouarzazate,TOPCon PV,SHJ/HJT PV,1.0603184590640182,0.08227592571786002,M suitability descriptor

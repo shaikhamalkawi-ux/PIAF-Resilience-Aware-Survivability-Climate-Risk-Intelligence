@@ -1,0 +1,8 @@
+scenario,spearman_vs_baseline,max_absolute_context_change,max_absolute_rank_shift,top_context_location
+baseline,0.9999999999999999,0.0,0,Jodhpur
+equal_components,0.8545454545454544,0.30712518375156767,2,Las Vegas
+omit_solar_variability,0.8909090909090909,0.2891444841871344,3,Abu Dhabi
+omit_wind_variability,0.7939393939393938,0.29423941776950713,3,Abu Dhabi
+omit_humidity,0.9151515151515152,0.3061190090177869,2,Las Vegas
+omit_heat,0.09090909090909088,0.721630401736672,6,Las Vegas
+mean_temperature_only_inside_heat,0.9030303030303028,0.09547229297109372,3,Abu Dhabi
