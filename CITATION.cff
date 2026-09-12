@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: "If you use these revision-stage reproducibility materials, please cite the associated manuscript and the pinned Git commit."
+title: "Reproducibility materials for ECMX-D-26-01378"
+type: dataset
+authors:
+  - family-names: Malkawi
+    given-names: Ghassan
+  - family-names: Elsayed
+    given-names: Ahmed Abdelaziz
+  - family-names: Alhagyan
+    given-names: Mohammed
+repository-code: "https://github.com/shaikhamalkawi-ux/PIAF-Resilience-Aware-Survivability-Climate-Risk-Intelligence"
+date-released: 2026-09-12
+version: "ECMX-R1"
