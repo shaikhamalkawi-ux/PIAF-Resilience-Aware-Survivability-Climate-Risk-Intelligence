@@ -1,0 +1,5 @@
+ghi_variability_definition,spearman_vs_baseline_context,max_absolute_rank_shift,pareto_set
+within_month_daily_CV_baseline,0.9999999999999999,0,Antofagasta; Aswan
+raw_daily_CV,0.8909090909090909,3,Antofagasta; Aswan
+month_conditioned_interannual_CV,0.8666666666666665,3,Antofagasta; Aswan
+annual_mean_interannual_CV,0.7939393939393938,4,Antofagasta; Aswan

@@ -1,0 +1,9 @@
+check,pass,detail
+site_count,True,10
+unique_site_count,True,10
+all_sites_have_rows,True,"[3652, 3652, 3652, 3652, 3652, 3652, 3652, 3652, 3652, 3652]"
+row_count_reasonable,True,"[3652, 3652, 3652, 3652, 3652, 3652, 3652, 3652, 3652, 3652]"
+mean_ghi_complete,True,0
+temperature_complete,True,0
+seasonality_rows,True,10
+query_rows,True,10

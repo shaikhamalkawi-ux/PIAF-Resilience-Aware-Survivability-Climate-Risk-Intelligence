@@ -1,0 +1,11 @@
+component,grid_start,grid_end,pareto_set
+heat,0.0,0.19865000000000002,Aswan
+heat,0.19870000000000002,0.5677,Antofagasta; Aswan
+heat,0.56775,1.0,Antofagasta; Aswan; NEOM Bay/Sharma
+humidity,0.0,0.29515,Antofagasta; Aswan
+humidity,0.2952,1.0,Aswan
+ghi_variability,0.0,0.0021000000000000003,Antofagasta; Aswan; Dunhuang
+ghi_variability,0.00215,0.36095,Antofagasta; Aswan
+ghi_variability,0.36100000000000004,1.0,Aswan
+wind_exposure,0.0,0.16435,Aswan
+wind_exposure,0.16440000000000002,1.0,Antofagasta; Aswan

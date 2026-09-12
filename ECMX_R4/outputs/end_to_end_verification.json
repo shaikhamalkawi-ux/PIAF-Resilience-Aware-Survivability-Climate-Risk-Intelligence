@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "daily_source": "NASA_POWER_2014_2023 daily_csv",
+  "compared_files": [
+    {"path":"data/annual_site_metrics.csv","canonical_sha256":"1851759ebfef5e9ca42634fdb8d7e8ad9fe1f5acdcee47951228c6c423954415","replay_sha256":"1851759ebfef5e9ca42634fdb8d7e8ad9fe1f5acdcee47951228c6c423954415","byte_equal":true},
+    {"path":"data/ghi_seasonality_diagnostics.csv","canonical_sha256":"4675d903269cab88e44d7404dc5deaf3a7eff32f384f7d4c002295b9ccf103ea","replay_sha256":"4675d903269cab88e44d7404dc5deaf3a7eff32f384f7d4c002295b9ccf103ea","byte_equal":true},
+    {"path":"outputs/tables/table_1_site_resource_climate_screen.csv","canonical_sha256":"67f394b6003e85d64ffe8320f574a95704acf5bc1f043eb14527d840976294c7","replay_sha256":"67f394b6003e85d64ffe8320f574a95704acf5bc1f043eb14527d840976294c7","byte_equal":true},
+    {"path":"outputs/tables/table_2_bootstrap_exact_pareto_set_frequency.csv","canonical_sha256":"8839429cb444d6ff234a960c19fbcca93f1b98acf31e097393a613c06e91aecc","replay_sha256":"8839429cb444d6ff234a960c19fbcca93f1b98acf31e097393a613c06e91aecc","byte_equal":true},
+    {"path":"outputs/tables/table_3_leave_one_location_out_normalization.csv","canonical_sha256":"ce0552c1599c61d04241b4ec87595de0fb1576a8d319ab430dbca4557cd24aad","replay_sha256":"ce0552c1599c61d04241b4ec87595de0fb1576a8d319ab430dbca4557cd24aad","byte_equal":true},
+    {"path":"outputs/tables/table_4_component_omission_sensitivity.csv","canonical_sha256":"848a477b1351a33c6407bdcf18997f8527e54471e1fe2c272c4607b3fda084e8","replay_sha256":"848a477b1351a33c6407bdcf18997f8527e54471e1fe2c272c4607b3fda084e8","byte_equal":true},
+    {"path":"outputs/tables/table_5_ghi_variability_definition_sensitivity.csv","canonical_sha256":"f7f35dbb4db54c6e2cd48a30bdc9770ac2211f5cac4d8e00bc1c1297bdc84004","replay_sha256":"f7f35dbb4db54c6e2cd48a30bdc9770ac2211f5cac4d8e00bc1c1297bdc84004","byte_equal":true},
+    {"path":"outputs/tables/table_6_component_weight_path_sensitivity.csv","canonical_sha256":"9a5784657d186efea6de9ab8f3554cc48374b278dfe264090a8913041027dae7","replay_sha256":"9a5784657d186efea6de9ab8f3554cc48374b278dfe264090a8913041027dae7","byte_equal":true},
+    {"path":"outputs/tables/table_7_component_weight_path_transitions.csv","canonical_sha256":"16a77740fa81186b7e7fc841c793579923f8cb5a1b8fc95cedba11e00136cd09","replay_sha256":"16a77740fa81186b7e7fc841c793579923f8cb5a1b8fc95cedba11e00136cd09","byte_equal":true},
+    {"path":"outputs/tables/table_8_unaggregated_five_objective_diagnostic.csv","canonical_sha256":"13cf76bf416a963ef090fa41f6857bfcde7314fcc3ec5e43780028439afc6f26","replay_sha256":"13cf76bf416a963ef090fa41f6857bfcde7314fcc3ec5e43780028439afc6f26","byte_equal":true},
+    {"path":"outputs/tables/table_9_four_family_evidence_boundary.csv","canonical_sha256":"a183f9d5317c13ab0701453c2b8fe35a9e877ee6d594677b3e0edc260805004b","replay_sha256":"a183f9d5317c13ab0701453c2b8fe35a9e877ee6d594677b3e0edc260805004b","byte_equal":true},
+    {"path":"outputs/analysis_summary.json","canonical_sha256":"566567a4e11e1833efa0a2d53fbfc27b9db2a653467eaa3c04d217c3672ebf77","replay_sha256":"566567a4e11e1833efa0a2d53fbfc27b9db2a653467eaa3c04d217c3672ebf77","byte_equal":true}
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "revision": "ECMX-R4",
+  "site_count": 10,
+  "years": [2014,2015,2016,2017,2018,2019,2020,2021,2022,2023],
+  "bootstrap_iterations": 10000,
+  "bootstrap_seed": 20260912,
+  "baseline_pareto_set": ["Antofagasta","Aswan"],
+  "bootstrap_pareto_frequency": {"Abu Dhabi":0.0,"Alice Springs":0.0017,"Antofagasta":1.0,"Aswan":1.0,"Dunhuang":0.0,"Jodhpur":0.0,"Las Vegas":0.0,"NEOM Bay/Sharma":0.0,"Ouarzazate":0.0,"Phoenix":0.0},
+  "bootstrap_exact_pareto_sets": {"Antofagasta; Aswan":9983,"Alice Springs; Antofagasta; Aswan":17},
+  "baseline_exact_set_frequency": 0.9983,
+  "leave_one_year_out_pareto_frequency": {"Abu Dhabi":0.0,"Alice Springs":0.0,"Antofagasta":1.0,"Aswan":1.0,"Dunhuang":0.0,"Jodhpur":0.0,"Las Vegas":0.0,"NEOM Bay/Sharma":0.0,"Ouarzazate":0.0,"Phoenix":0.0},
+  "worst_leave_one_location_spearman": 0.9,
+  "worst_leave_one_location_max_rank_shift": 2,
+  "all_ghi_definitions_same_pareto_set": true,
+  "component_weight_path_stability": [
+    {"component":"heat","baseline_weight":0.25,"baseline_set_stable_from_weight":0.1986567239597341,"baseline_set_stable_to_weight":0.5677285658661597,"downward_margin_from_0_25":0.051343276040265895,"upward_margin_from_0_25":0.3177285658661597,"nearest_set_below_interval":"Aswan","nearest_set_above_interval":"Antofagasta; Aswan; NEOM Bay/Sharma"},
+    {"component":"humidity","baseline_weight":0.25,"baseline_set_stable_from_weight":0.0,"baseline_set_stable_to_weight":0.2951601552015125,"downward_margin_from_0_25":0.25,"upward_margin_from_0_25":0.04516015520151251,"nearest_set_below_interval":"","nearest_set_above_interval":"Aswan"},
+    {"component":"ghi_variability","baseline_weight":0.25,"baseline_set_stable_from_weight":0.00210720873909552,"baseline_set_stable_to_weight":0.3609811991074331,"downward_margin_from_0_25":0.24789279126090447,"upward_margin_from_0_25":0.11098119910743309,"nearest_set_below_interval":"Antofagasta; Aswan; Dunhuang","nearest_set_above_interval":"Aswan"},
+    {"component":"wind_exposure","baseline_weight":0.25,"baseline_set_stable_from_weight":0.164363045850901,"baseline_set_stable_to_weight":1.0,"downward_margin_from_0_25":0.085636954149099,"upward_margin_from_0_25":0.75,"nearest_set_below_interval":"Aswan","nearest_set_above_interval":""}
+  ],
+  "unaggregated_five_objective_nondominated_count": 10,
+  "scientific_boundary": ["Main results use NASA POWER-derived climate/resource evidence only.","Equal component weighting is a declared baseline convention, not a calibrated physical risk model.","Weight-path, omission, normalization, GHI-definition, and temporal sensitivity are reported explicitly.","Wind is an external-exposure descriptor, not a gust-load or one-directional damage coefficient.","No numerical PV-family score or market coefficient enters the empirical result.","Historical pre-feasibility screening only; not climate projection, failure prediction, yield modeling, LCOE, or bankability analysis."]
+}

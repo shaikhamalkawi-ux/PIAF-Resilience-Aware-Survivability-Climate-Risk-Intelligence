@@ -1,0 +1,27 @@
+{
+  "manuscript_id": "ECMX-D-26-01378",
+  "title": "A Resource-Explicit Historical Climate-Stress Framework for Pre-Feasibility Photovoltaic Infrastructure Screening",
+  "retrieved_utc": "2026-09-12T14:16:58.433370+00:00",
+  "n_sites": 10,
+  "period": {
+    "start": "20140101",
+    "end": "20231231"
+  },
+  "parameters": [
+    "ALLSKY_SFC_SW_DWN",
+    "T2M",
+    "T2M_MAX",
+    "RH2M",
+    "WS10M"
+  ],
+  "api_endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+  "notes": [
+    "NASA POWER is treated as a satellite/model/reanalysis-derived product, not direct ground observation.",
+    "Raw daily GHI CV contains seasonal and day-to-day variability.",
+    "Additional seasonality diagnostics are included for reviewer response.",
+    "This script does not calibrate model weights or technology scores."
+  ],
+  "revision": "ECMX-R4",
+  "raw_archive_filename": "ECMX_D_26_01378_NASA_POWER_2014_2023_COMPLETE.zip",
+  "raw_archive_sha256": "8dd9b7acfbe92ca83b2fb1c8c35271858444e6cf10f015f15fd04f837bfb57ec"
+}

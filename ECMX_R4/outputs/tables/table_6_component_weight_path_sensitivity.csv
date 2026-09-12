@@ -1,0 +1,5 @@
+component,baseline_weight,baseline_set_stable_from_weight,baseline_set_stable_to_weight,downward_margin_from_0_25,upward_margin_from_0_25,nearest_set_below_interval,nearest_set_above_interval
+heat,0.25,0.1986567239597341,0.5677285658661597,0.051343276040265895,0.3177285658661597,Aswan,Antofagasta; Aswan; NEOM Bay/Sharma
+humidity,0.25,0.0,0.2951601552015125,0.25,0.04516015520151251,,Aswan
+ghi_variability,0.25,0.00210720873909552,0.3609811991074331,0.24789279126090447,0.11098119910743309,Antofagasta; Aswan; Dunhuang,Aswan
+wind_exposure,0.25,0.164363045850901,1.0,0.085636954149099,0.75,Aswan,
