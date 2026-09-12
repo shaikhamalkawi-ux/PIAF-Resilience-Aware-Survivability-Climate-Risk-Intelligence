@@ -16,11 +16,11 @@ The former normalized operational-stress quantity is relabeled as a **benchmark-
 
 ## Coefficients
 
-The climate weights and PV screening coefficients are described as declared screening-scenario values. They are not described as field calibration. The central PV values reproduce the submitted scenario; lower/upper values are declared uncertainty envelopes rather than confidence intervals.
+The climate weights and PV component scores are described as declared screening-scenario values. They are not described as field calibration. The PV baseline-suitability and resilience scores are now reconstructed explicitly from the component matrix and disclosed weights used in the submitted screening design.
 
 ## Robustness
 
-The earlier ±10% aggregate Monte Carlo test is removed. The revised reproducibility script reports deterministic technology envelopes, leave-one-location-out normalization sensitivity, climate-component sensitivity, and a mean-temperature-only heat-component sensitivity.
+The earlier ±10% aggregate Monte Carlo test is removed. The revised analysis uses deterministic leave-one-location-out normalization sensitivity, climate-component sensitivity, mean-temperature-only heat sensitivity, equal-weight technology sensitivity, and leave-one-technology-criterion-out tests. This avoids presenting an arbitrary perturbation width as a field probability model.
 
 ## Removed secondary analyses
 
