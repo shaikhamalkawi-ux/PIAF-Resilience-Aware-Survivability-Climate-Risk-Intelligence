@@ -1,5 +1,0 @@
-technology,s0_lower,s0_central,s0_upper,rho_lower,rho_central,rho_upper,evidence_status,interpretation
-PERC PV,0.76,0.818,0.86,0.6,0.672,0.75,B scenario,"Central values reproduce the submitted PERC screening coefficients; bounds are a declared uncertainty envelope, not a field confidence interval."
-TOPCon PV,0.8,0.803,0.88,0.78,0.847,0.9,A/B scenario,"Central values reproduce the submitted TOPCon screening coefficients; bounds cover evidence uncertainty and bill-of-materials dependence."
-SHJ/HJT PV,0.7,0.752,0.83,0.65,0.876,0.88,B-conflicted,"Central values reproduce the submitted HJT screening coefficients; the wide bounds reflect conflicting recent desert-field evidence."
-CdTe PV,0.66,0.716,0.78,0.78,0.848,0.91,B scenario,"Central values reproduce the submitted CdTe screening coefficients; bounds are a declared uncertainty envelope and are not cross-family field calibration."
