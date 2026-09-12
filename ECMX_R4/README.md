@@ -34,11 +34,21 @@ The main screen is bi-objective: higher long-term mean GHI and lower baseline hi
 
 The four PV families - PERC, TOPCon, SHJ/HJT, and CdTe - are retained as evidence context only. No universal family coefficient or quantitative family ranking enters the empirical result.
 
-## Versioning
+## Permanent archive and exact code snapshot
 
 Revision label: **ECMX-R4**.
 
-The journal submission should cite the immutable Git commit corresponding to this exact R4 directory. If a DOI-backed archival record is minted before resubmission, add that DOI to the manuscript and response without changing the scientific results.
+The reproducibility materials and reacquired NASA POWER raw-evidence archive are permanently archived in Zenodo:
+
+**DOI: 10.5281/zenodo.22730388**
+
+https://doi.org/10.5281/zenodo.22730388
+
+The exact analysis-code snapshot used for the journal resubmission is Git commit:
+
+`89d266e3ea18777ff131f3108690e4fdcd940601`
+
+The Zenodo DOI identifies the permanent archival record; the Git commit identifies the exact code snapshot. Metadata-only updates made after archiving do not alter the locked ECMX-R4 numerical results.
 
 ## Generated figures
 
