@@ -1,0 +1,5 @@
+PV family,evidence_basis,supported_interpretation,calculation_role
+PERC,Qatar desert field comparison; damp-heat comparison,"Mature reference family; tested samples can be comparatively stable, but product and manufacturing differences remain important.",Evidence context only; no family coefficient or rank.
+TOPCon,Qatar desert field comparison; 20-module-type accelerated-aging study; damp-heat handling study,Strong efficiency/temperature-coefficient potential with substantial product-to-product moisture/UV reliability heterogeneity.,Evidence context only; no family coefficient or rank.
+SHJ/HJT,Qatar desert field comparison; damp-heat handling study,Favorable temperature coefficients can coexist with product-specific field or humidity-related degradation.,Evidence context only; no family coefficient or rank.
+CdTe,DOE/IEA technology and hot-climate evidence,"Comparable PV technology with hot-climate relevance, but not covered by the same common four-family field experiment used for the crystalline families.",Evidence context only; no family coefficient or rank.
