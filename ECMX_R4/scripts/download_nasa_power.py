@@ -188,9 +188,18 @@ def ghi_seasonality_diagnostics(df: pd.DataFrame) -> Dict[str, float]:
     ghi["year"] = ghi["date"].dt.year
     ghi["month"] = ghi["date"].dt.month
 
+    # Original/raw daily CV: contains seasonal + day-to-day variation.
     raw_daily_cv = cv(ghi["ALLSKY_SFC_SW_DWN"])
+
+    # Interannual variability following the logic used in long-term solar-resource
+    # studies: compute each year's mean daily GHI, then CV across years.
     annual_mean_daily = ghi.groupby("year")["ALLSKY_SFC_SW_DWN"].mean()
     interannual_cv = cv(annual_mean_daily)
+
+    # Month-conditioned interannual variability:
+    # for each calendar month, compute the mean daily GHI in each year, then
+    # calculate CV across years. This avoids treating the deterministic annual
+    # seasonal cycle itself as "variability."
     monthly_year = (
         ghi.groupby(["year", "month"])["ALLSKY_SFC_SW_DWN"]
         .mean()
@@ -267,8 +276,10 @@ def main() -> int:
         slug = slugify(site["location"])
         raw_path = raw_dir / f"{slug}_{args.start}_{args.end}.json"
         daily_path = daily_dir / f"{slug}_{args.start}_{args.end}.csv"
+
         params = build_query(site, args.start, args.end)
         exact_url = build_url(params)
+
         print(f"[{idx}/{len(SITES)}] {site['location']}")
 
         if raw_path.exists() and not args.overwrite:
@@ -289,25 +300,107 @@ def main() -> int:
 
         summary = summarize_site(site, df)
         summaries.append(summary)
+
         seas = ghi_seasonality_diagnostics(df)
-        seas.update({"location":site["location"],"country":site["country"],"latitude":site["latitude"],"longitude":site["longitude"]})
+        seas.update({
+            "location": site["location"],
+            "country": site["country"],
+            "latitude": site["latitude"],
+            "longitude": site["longitude"],
+        })
         seasonal_rows.append(seas)
-        thermal_rows.append({"location":site["location"],"country":site["country"],"mean_t2m_c":summary["mean_t2m_c"],"mean_t2m_max_c":summary["mean_t2m_max_c"],"daily_corr_t2m_t2m_max":summary["corr_t2m_t2m_max"]})
-        query_rows.append({"location":site["location"],"country":site["country"],"latitude":site["latitude"],"longitude":site["longitude"],"start":args.start,"end":args.end,"parameters":",".join(PARAMETERS),"community":"RE","format":"JSON","url":exact_url})
+
+        thermal_rows.append({
+            "location": site["location"],
+            "country": site["country"],
+            "mean_t2m_c": summary["mean_t2m_c"],
+            "mean_t2m_max_c": summary["mean_t2m_max_c"],
+            "daily_corr_t2m_t2m_max": summary["corr_t2m_t2m_max"],
+        })
+
+        query_rows.append({
+            "location": site["location"],
+            "country": site["country"],
+            "latitude": site["latitude"],
+            "longitude": site["longitude"],
+            "start": args.start,
+            "end": args.end,
+            "parameters": ",".join(PARAMETERS),
+            "community": "RE",
+            "format": "JSON",
+            "url": exact_url,
+        })
+
         for kind, path in [("raw_json", raw_path), ("daily_csv", daily_path)]:
-            manifest_rows.append({"location":site["location"],"artifact_type":kind,"relative_path":str(path.relative_to(out)),"sha256":sha256_file(path),"bytes":path.stat().st_size,"retrieved_or_generated_utc":retrieved_at})
+            manifest_rows.append({
+                "location": site["location"],
+                "artifact_type": kind,
+                "relative_path": str(path.relative_to(out)),
+                "sha256": sha256_file(path),
+                "bytes": path.stat().st_size,
+                "retrieved_or_generated_utc": retrieved_at,
+            })
 
-    summary_df = pd.DataFrame(summaries); summary_path = proc_dir / "sites_climate_summary.csv"; summary_df.to_csv(summary_path,index=False)
-    seasonal_df = pd.DataFrame(seasonal_rows); seasonal_path = proc_dir / "ghi_seasonality_diagnostics.csv"; seasonal_df.to_csv(seasonal_path,index=False)
-    thermal_df = pd.DataFrame(thermal_rows); thermal_path = proc_dir / "thermal_redundancy_audit.csv"; thermal_df.to_csv(thermal_path,index=False)
-    query_df = pd.DataFrame(query_rows); query_path = prov_dir / "nasa_power_query_urls.csv"; query_df.to_csv(query_path,index=False)
+    summary_df = pd.DataFrame(summaries)
+    summary_path = proc_dir / "sites_climate_summary.csv"
+    summary_df.to_csv(summary_path, index=False)
 
-    for kind,path in [("processed_summary",summary_path),("seasonality_diagnostic",seasonal_path),("thermal_redundancy_audit",thermal_path),("query_registry",query_path)]:
-        manifest_rows.append({"location":"ALL","artifact_type":kind,"relative_path":str(path.relative_to(out)),"sha256":sha256_file(path),"bytes":path.stat().st_size,"retrieved_or_generated_utc":retrieved_at})
-    manifest_path=prov_dir/"acquisition_manifest.csv"; pd.DataFrame(manifest_rows).to_csv(manifest_path,index=False)
-    metadata={"manuscript":"ECMX-D-26-01378","project":"PIAF Resilience-Aware Survivability / Climate-Risk Intelligence","retrieved_utc":retrieved_at,"n_sites":len(SITES),"period":{"start":args.start,"end":args.end},"parameters":PARAMETERS,"api_endpoint":API_URL,"community":"RE","interpretation_note":"Raw daily GHI CV includes seasonal and day-to-day variability. See ghi_seasonality_diagnostics.csv for interannual and month-conditioned sensitivity diagnostics."}
-    (prov_dir/"acquisition_metadata.json").write_text(json.dumps(metadata,indent=2),encoding="utf-8")
-    print("\nDone."); print(f"Output directory: {out.resolve()}"); print(f"Sites: {len(SITES)}"); print(f"Period: {args.start} to {args.end}"); print(f"Parameters: {', '.join(PARAMETERS)}"); return 0
+    seasonal_df = pd.DataFrame(seasonal_rows)
+    seasonal_path = proc_dir / "ghi_seasonality_diagnostics.csv"
+    seasonal_df.to_csv(seasonal_path, index=False)
+
+    thermal_df = pd.DataFrame(thermal_rows)
+    thermal_path = proc_dir / "thermal_redundancy_audit.csv"
+    thermal_df.to_csv(thermal_path, index=False)
+
+    query_df = pd.DataFrame(query_rows)
+    query_path = prov_dir / "nasa_power_query_urls.csv"
+    query_df.to_csv(query_path, index=False)
+
+    for kind, path in [
+        ("processed_summary", summary_path),
+        ("seasonality_diagnostic", seasonal_path),
+        ("thermal_redundancy_audit", thermal_path),
+        ("query_registry", query_path),
+    ]:
+        manifest_rows.append({
+            "location": "ALL",
+            "artifact_type": kind,
+            "relative_path": str(path.relative_to(out)),
+            "sha256": sha256_file(path),
+            "bytes": path.stat().st_size,
+            "retrieved_or_generated_utc": retrieved_at,
+        })
+
+    manifest_path = prov_dir / "acquisition_manifest.csv"
+    pd.DataFrame(manifest_rows).to_csv(manifest_path, index=False)
+
+    metadata = {
+        "manuscript": "ECMX-D-26-01378",
+        "project": "PIAF Resilience-Aware Survivability / Climate-Risk Intelligence",
+        "retrieved_utc": retrieved_at,
+        "n_sites": len(SITES),
+        "period": {"start": args.start, "end": args.end},
+        "parameters": PARAMETERS,
+        "api_endpoint": API_URL,
+        "community": "RE",
+        "interpretation_note": (
+            "Raw daily GHI CV includes seasonal and day-to-day variability. "
+            "See ghi_seasonality_diagnostics.csv for interannual and "
+            "month-conditioned sensitivity diagnostics."
+        ),
+    }
+    (prov_dir / "acquisition_metadata.json").write_text(
+        json.dumps(metadata, indent=2), encoding="utf-8"
+    )
+
+    print("\nDone.")
+    print(f"Output directory: {out.resolve()}")
+    print(f"Sites: {len(SITES)}")
+    print(f"Period: {args.start} to {args.end}")
+    print(f"Parameters: {', '.join(PARAMETERS)}")
+    return 0
+
 
 if __name__ == "__main__":
     raise SystemExit(main())
