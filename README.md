@@ -15,7 +15,7 @@ The revision responds directly to the external review:
 - The climate term is described as a **benchmark-relative climate-context index**, not a universal physical risk scale. A value of zero means the lowest value in this benchmark, not zero physical stress.
 - The former 0.33/0.66 stress-regime thresholds were removed.
 - The former WSM/TOPSIS/VIKOR and market-price side analyses were removed because they were secondary to the paper and insufficiently documented in the initial submission.
-- The former ±10% Monte Carlo perturbation was removed. The revision uses declared technology envelopes and deterministic structural-sensitivity tests instead.
+- The former ±10% Monte Carlo perturbation was removed. The revision uses deterministic climate-structure, technology-weight, and leave-one-location-out sensitivity tests instead.
 - All revised tables, figures, abstract values, and conclusions are generated from the same version-controlled inputs and script.
 
 ## Core equation
@@ -28,18 +28,19 @@ where:
 
 - `R[l] = mean_GHI[l] / max(mean_GHI)` is the positive relative solar-resource term;
 - `C[l]` is the benchmark-relative climate-context index;
-- `S0[i]` is the declared baseline-suitability scenario value/envelope;
-- `rho[i]` is the declared resilience scenario value/envelope;
+- `S0[i]` is the baseline-suitability scenario score reconstructed from five disclosed component scores and weights;
+- `rho[i]` is the resilience scenario score reconstructed from four disclosed component scores and weights;
 - `lambda = 1` in the reported baseline screen.
 
-The technology envelopes are **screening scenarios, not empirical confidence intervals or field-calibrated constants**.
+The technology component values and weights are **declared screening scenarios, not field-calibrated family constants**.
 
 ## Repository structure
 
 ```text
 data/
   sites_climate_summary.csv          locked 2014–2023 climate summaries
-  pv_scenario_intervals.csv          declared PV screening envelopes
+  pv_screening_components.csv        declared PV screening-component matrix
+  model_settings.csv                 declared model weights and lambda setting
   technology_evidence_register.csv   source/claim-boundary register
   nasa_power_query_urls.csv          exact NASA POWER API queries
 scripts/
@@ -88,7 +89,7 @@ NASA POWER is described in the manuscript as a **satellite/model-derived, analys
 - GHI and wind coefficients of variation are calculated on the raw daily series. They therefore combine seasonal and day-to-day variation; they are not isolated intermittency or ramping metrics.
 - Mean and maximum temperature are combined inside one heat component. They are not counted as two separate top-level climate criteria; a mean-temperature-only sensitivity is also reported.
 - The 10-location benchmark is purposive. The climate-context index is sample dependent, so leave-one-location-out sensitivity is reported explicitly.
-- The central scenario places TOPCon first at nine benchmark points and PERC first at Dunhuang. The declared technology envelopes also overlap. The repository therefore does **not** claim universal dominance of one PV family.
+- The central scenario places TOPCon first at nine benchmark points and PERC first at Dunhuang. Technology-weight sensitivity changes some leaders, so the repository does **not** claim universal dominance of one PV family.
 
 ## Citation / versioning
 
