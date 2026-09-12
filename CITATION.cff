@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "If you use these revision-stage reproducibility materials, please cite the associated manuscript and the pinned ECMX-R4 Git commit."
+message: "Please cite the Zenodo archive DOI for the reproducibility materials; the pinned Git commit identifies the exact ECMX-R4 analysis-code snapshot used for the journal resubmission."
 title: "Reproducibility materials for ECMX-D-26-01378"
 type: dataset
 authors:
@@ -10,5 +10,7 @@ authors:
   - family-names: Alhagyan
     given-names: Mohammed
 repository-code: "https://github.com/shaikhamalkawi-ux/PIAF-Resilience-Aware-Survivability-Climate-Risk-Intelligence"
-date-released: 2026-09-12
+url: "https://doi.org/10.5281/zenodo.22730388"
+doi: "10.5281/zenodo.22730388"
+date-released: 2026-09-13
 version: "ECMX-R4"
