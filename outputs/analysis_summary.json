@@ -1,0 +1,17 @@
+{
+  "site_count": 10,
+  "technology_count": 4,
+  "baseline_context_min_location": "Dunhuang",
+  "baseline_context_max_location": "Jodhpur",
+  "temperature_pearson": 0.9139591616867289,
+  "central_leader_all_locations": true,
+  "guaranteed_dominance_count": 0,
+  "worst_leave_one_out_spearman": 0.9333333333333332,
+  "worst_leave_one_out_omission": "Dunhuang",
+  "notes": [
+    "Climate-context weights are declared screening-scenario weights, not calibrated physical damage coefficients.",
+    "The GHI and wind coefficients of variation use the raw daily series and therefore combine seasonal and day-to-day variability.",
+    "C=0 denotes the lowest value in this benchmark, not absence of physical climate stress.",
+    "Technology lower/upper values are declared screening envelopes, not empirical confidence intervals."
+  ]
+}
