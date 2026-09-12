@@ -1,0 +1,5 @@
+technology,E_performance,M_market_maturity,C_cost_attractiveness,D_dispatchability_flexibility,OM_om_simplicity,RT_thermal_tolerance,RD_degradation_resistance,RH_humidity_soiling_tolerance,RO_operational_robustness,status
+PERC PV,0.780,0.950,0.920,0.500,0.880,0.650,0.680,0.620,0.750,"Declared screening scenario; not a field-calibrated family constant."
+TOPCon PV,0.900,0.880,0.780,0.500,0.820,0.840,0.900,0.800,0.840,"Declared screening scenario; recent reliability evidence requires bill-of-materials caution."
+SHJ/HJT PV,0.950,0.750,0.650,0.500,0.750,0.920,0.880,0.820,0.850,"Declared screening scenario; recent Qatar field evidence does not support a universal high-resilience claim."
+CdTe PV,0.800,0.700,0.750,0.500,0.760,0.900,0.820,0.840,0.800,"Declared screening scenario; not directly calibrated against the same four-family field benchmark."
