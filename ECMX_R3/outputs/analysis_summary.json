@@ -1,0 +1,13 @@
+{
+  "site_count": 10,
+  "years": [2014,2015,2016,2017,2018,2019,2020,2021,2022,2023],
+  "bootstrap_iterations": 10000,
+  "bootstrap_seed": 20260912,
+  "baseline_pareto_set": ["Antofagasta","Aswan"],
+  "bootstrap_pareto_frequency": {"Abu Dhabi":0.0,"Alice Springs":0.0017,"Antofagasta":1.0,"Aswan":1.0,"Dunhuang":0.0,"Jodhpur":0.0,"Las Vegas":0.0,"NEOM Bay/Sharma":0.0,"Ouarzazate":0.0,"Phoenix":0.0},
+  "leave_one_year_out_pareto_frequency": {"Abu Dhabi":0.0,"Alice Springs":0.0,"Antofagasta":1.0,"Aswan":1.0,"Dunhuang":0.0,"Jodhpur":0.0,"Las Vegas":0.0,"NEOM Bay/Sharma":0.0,"Ouarzazate":0.0,"Phoenix":0.0},
+  "worst_leave_one_location_spearman": 0.9,
+  "worst_leave_one_location_max_rank_shift": 2,
+  "all_ghi_definitions_same_pareto_set": true,
+  "scientific_boundary": ["Main results use NASA POWER-derived climate/resource evidence only.","Equal component weighting is a neutral summary convention and is sensitivity-tested.","No numerical PV-family score or market coefficient enters the empirical result.","The framework is historical pre-feasibility screening, not climate projection, failure prediction, yield modeling, LCOE, or bankability analysis."]
+}
