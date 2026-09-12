@@ -1,9 +1,8 @@
 layer,parameter,symbol,value,status
-baseline_suitability,performance,E,0.30,"Declared baseline scenario weight"
-baseline_suitability,market_maturity,M,0.25,"Declared baseline scenario weight"
-baseline_suitability,cost_attractiveness,C,0.20,"Declared baseline scenario weight"
-baseline_suitability,dispatchability_flexibility,D,0.15,"Declared baseline scenario weight"
-baseline_suitability,om_simplicity,OM,0.10,"Declared baseline scenario weight"
+baseline_suitability,performance,E,0.3529411765,"Original relative weight preserved after removing non-discriminatory dispatchability/flexibility"
+baseline_suitability,market_maturity,M,0.2941176471,"Original relative weight preserved after removing non-discriminatory dispatchability/flexibility"
+baseline_suitability,cost_attractiveness,C,0.2352941176,"Original relative weight preserved after removing non-discriminatory dispatchability/flexibility"
+baseline_suitability,om_simplicity,OM,0.1176470588,"Original relative weight preserved after removing non-discriminatory dispatchability/flexibility"
 resilience,thermal_tolerance,RT,0.35,"Declared baseline scenario weight"
 resilience,degradation_resistance,RD,0.25,"Declared baseline scenario weight"
 resilience,humidity_soiling_tolerance,RH,0.20,"Declared baseline scenario weight"
