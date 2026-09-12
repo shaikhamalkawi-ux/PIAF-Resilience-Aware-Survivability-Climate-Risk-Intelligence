@@ -14,16 +14,17 @@ Each row is one fixed benchmark point. The locations are geographic points and a
 - `mean_ws10m_ms`: 2014–2023 daily mean of `WS10M`.
 - `cv_ws10m`: sample coefficient of variation of the raw daily `WS10M` series.
 
-## `data/pv_scenario_intervals.csv`
+## `data/pv_screening_components.csv`
 
-Declared early-stage screening envelopes for four PV technology families.
+Declared early-stage scenario inputs for the four comparable PV families. The component values are retained from the submitted screening design so that the revised calculations are reproducible. They are **not** field-calibrated family constants.
 
-- `s0_lower`, `s0_central`, `s0_upper`: baseline-suitability screening values.
-- `rho_lower`, `rho_central`, `rho_upper`: resilience screening values.
-- `evidence_status`: qualitative evidence class/claim status.
-- `interpretation`: explicit claim boundary.
+Baseline-suitability components: performance (`E`), market maturity (`M`), cost attractiveness (`C`), dispatchability/flexibility (`D`), and O&M simplicity (`OM`).
 
-These values are **not** field-calibrated probability distributions and the lower/upper bounds are **not** confidence intervals.
+Resilience components: thermal tolerance (`RT`), degradation resistance (`RD`), humidity/soiling tolerance (`RH`), and operational robustness (`RO`).
+
+## `data/model_settings.csv`
+
+Exact declared weights used to reconstruct baseline suitability, resilience, and climate context, plus the baseline attenuation setting `lambda=1`. These values define a transparent screening scenario and are not empirical damage coefficients.
 
 ## `data/technology_evidence_register.csv`
 
