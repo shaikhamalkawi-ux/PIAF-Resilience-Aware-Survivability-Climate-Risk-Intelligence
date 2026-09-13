@@ -1,0 +1,21 @@
+{
+  "scope": "Secondary all-site methodological benchmark supporting R4R7; Pareto remains the primary decision rule.",
+  "sites": 10,
+  "primary_criteria": ["mean GHI (benefit)", "equal-weight climate context C (cost)"],
+  "normalization": "Common benchmark min-max normalization to [0,1] benefit orientation for both criteria.",
+  "baseline_weights": {"resource": 0.5, "climate": 0.5},
+  "vikor_v": 0.5,
+  "pareto_set": ["Antofagasta", "Aswan"],
+  "equal_weight_rank_1": {"WSM": "Antofagasta", "TOPSIS": "Antofagasta", "VIKOR": "Antofagasta"},
+  "equal_weight_rank_2": {"WSM": "Aswan", "TOPSIS": "Aswan", "VIKOR": "Aswan"},
+  "vikor_compromise_set": ["Antofagasta", "Aswan"],
+  "vector_TOPSIS_equal_weight_rank_1": "Antofagasta",
+  "vector_TOPSIS_equal_weight_rank_2": "Aswan",
+  "vector_TOPSIS_rank1_intervals": [{"from": 0.0, "to": 0.732, "site": "Antofagasta"}, {"from": 0.733, "to": 1.0, "site": "Aswan"}],
+  "spearman": {
+    "WSM": {"WSM": 1.0, "TOPSIS": 0.9878787878787879, "VIKOR": 0.9757575757575757},
+    "TOPSIS": {"WSM": 0.9878787878787879, "TOPSIS": 1.0, "VIKOR": 0.9636363636363636},
+    "VIKOR": {"WSM": 0.9757575757575757, "TOPSIS": 0.9636363636363636, "VIKOR": 1.0}
+  },
+  "interpretation": "All three equal-weight methods place the two Pareto sites first and second. The scalar winner is normalization/weight dependent, supporting retention of Pareto as the central non-compensatory screen."
+}
