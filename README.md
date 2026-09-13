@@ -17,9 +17,9 @@ The R4 source snapshot contains the exact query registry, annual metrics, eviden
 
 `89d266e3ea18777ff131f3108690e4fdcd940601`
 
-## Secondary reviewer benchmark
+## Secondary all-site MCDM benchmark
 
-The R4R7 reviewer-closure adds a separately versioned all-site WSM/TOPSIS/VIKOR consistency benchmark under:
+The secondary WSM/TOPSIS/VIKOR methodological consistency benchmark is versioned separately under:
 
 `ECMX_R4R7_MCDM_SecondaryBenchmark/`
 
@@ -27,16 +27,24 @@ It uses the same ten fixed sites and the same two decision dimensions as the pri
 
 At that reference, WSM, TOPSIS and VIKOR all rank Antofagasta first and Aswan second; VIKOR retains both in the compromise set. Deterministic weight and normalization audits show that the identity of a single compensatory winner is more specification-sensitive than the two-site shortlist.
 
-The secondary folder contains the executable script, locked ten-site input table, reviewer-facing Supplementary Note S1, rank and normalization outputs, and a manifest verifier. Full grid outputs and the formula-bearing audit workbook are included in the archival R4R7 deposit package.
+The secondary benchmark source snapshot is immutable Git commit:
+
+`6c5a24048a67db5a65bd648a5324fe6ea0d267bf`
 
 ## Permanent archive
 
-The locked ECMX-R4 reproducibility materials and reacquired NASA POWER raw-evidence archive are permanently archived in Zenodo:
+The earlier primary-only Zenodo version is:
 
-**DOI: 10.5281/zenodo.22730737**
+**DOI: 10.5281/zenodo.22730388**
 
-https://doi.org/10.5281/zenodo.22730737
+https://doi.org/10.5281/zenodo.22730388
 
-The existing DOI identifies the published primary R4 archive. The R4R7 secondary MCDM benchmark is versioned separately in this repository so the locked primary scientific snapshot is not rewritten. A Zenodo new-version package is prepared separately for archival extension.
+The complete reproducibility version for the current revision, including the secondary all-site MCDM extension, is assigned:
 
-Earlier folders/files are retained for provenance but do not supersede the locked ECMX-R4 primary analysis.
+**DOI: 10.5281/zenodo.22737170**
+
+https://doi.org/10.5281/zenodo.22737170
+
+The Zenodo concept DOI for all versions is **10.5281/zenodo.22730387**.
+
+Earlier folders/files are retained for provenance but do not supersede the locked primary analysis or the separately pinned secondary benchmark.
