@@ -1,0 +1,11 @@
+location,shared_minmax_TOPSIS_rank,raw_vector_TOPSIS_rank,shared_minmax_VIKOR_rank,raw_ideal_gap_VIKOR_rank
+Abu Dhabi,7,7,6,6
+Alice Springs,6,8,7,7
+Antofagasta,1,1,1,1
+Aswan,2,2,2,2
+Dunhuang,8,4,9,9
+Jodhpur,9,9,8,8
+Las Vegas,10,10,10,10
+NEOM Bay/Sharma,4,6,5,5
+Ouarzazate,5,5,4,4
+Phoenix,3,3,3,3
