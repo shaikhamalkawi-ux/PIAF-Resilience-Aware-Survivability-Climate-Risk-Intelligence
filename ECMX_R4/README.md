@@ -38,17 +38,17 @@ The four PV families - PERC, TOPCon, SHJ/HJT, and CdTe - are retained as evidenc
 
 Revision label: **ECMX-R4**.
 
-The reproducibility materials and reacquired NASA POWER raw-evidence archive are permanently archived in Zenodo:
+The primary-only reproducibility materials and reacquired NASA POWER raw-evidence archive are permanently archived in Zenodo:
 
-**DOI: 10.5281/zenodo.22730737**
+**DOI: 10.5281/zenodo.22730388**
 
-https://doi.org/10.5281/zenodo.22730737
+https://doi.org/10.5281/zenodo.22730388
 
-The exact analysis-code snapshot used for the journal resubmission is Git commit:
+The exact analysis-code snapshot used for the journal revision is Git commit:
 
 `89d266e3ea18777ff131f3108690e4fdcd940601`
 
-The Zenodo DOI identifies the permanent archival record; the Git commit identifies the exact code snapshot. Metadata-only updates made after archiving do not alter the locked ECMX-R4 numerical results.
+The Zenodo DOI above identifies the primary-only R4 archival version; the Git commit identifies the exact primary analysis-code snapshot. Later versioned archival extensions do not alter the locked ECMX-R4 numerical results.
 
 ## Generated figures
 
