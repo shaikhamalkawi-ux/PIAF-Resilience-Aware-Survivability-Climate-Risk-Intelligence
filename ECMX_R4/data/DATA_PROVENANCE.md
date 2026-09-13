@@ -14,9 +14,9 @@ The exact coordinates and query URLs are stored in `nasa_power_query_urls.csv`. 
 
 The reproducibility materials and raw-evidence archive are permanently archived in Zenodo at:
 
-**DOI: 10.5281/zenodo.22730388**
+**DOI: 10.5281/zenodo.22730737**
 
-https://doi.org/10.5281/zenodo.22730388
+https://doi.org/10.5281/zenodo.22730737
 
 The exact analysis-code snapshot used for the journal resubmission is Git commit `89d266e3ea18777ff131f3108690e4fdcd940601`.
 
