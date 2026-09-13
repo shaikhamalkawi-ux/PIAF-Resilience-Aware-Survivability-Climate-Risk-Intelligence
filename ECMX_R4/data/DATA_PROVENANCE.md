@@ -12,13 +12,13 @@ Variables:
 
 The exact coordinates and query URLs are stored in `nasa_power_query_urls.csv`. The raw-evidence ZIP used for the revision is `ECMX_D_26_01378_NASA_POWER_2014_2023_COMPLETE.zip`, SHA-256 `8dd9b7acfbe92ca83b2fb1c8c35271858444e6cf10f015f15fd04f837bfb57ec`.
 
-The reproducibility materials and raw-evidence archive are permanently archived in Zenodo at:
+The primary-only reproducibility materials and raw-evidence archive are permanently archived in Zenodo at:
 
-**DOI: 10.5281/zenodo.22730737**
+**DOI: 10.5281/zenodo.22730388**
 
-https://doi.org/10.5281/zenodo.22730737
+https://doi.org/10.5281/zenodo.22730388
 
-The exact analysis-code snapshot used for the journal resubmission is Git commit `89d266e3ea18777ff131f3108690e4fdcd940601`.
+The exact primary analysis-code snapshot is Git commit `89d266e3ea18777ff131f3108690e4fdcd940601`.
 
 ## Reproducible transformation chain
 1. `scripts/download_nasa_power.py` reacquires raw NASA POWER JSON and daily CSV files and records provenance.
