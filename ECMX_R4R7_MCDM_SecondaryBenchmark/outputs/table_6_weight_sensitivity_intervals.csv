@@ -1,0 +1,10 @@
+method,interval_type,resource_weight_from,resource_weight_to,value
+WSM,rank_1_site,0.0,0.537,Antofagasta
+WSM,rank_1_site,0.538,1.0,Aswan
+WSM,top2_exactly_pareto_set,0.0,0.977,Antofagasta; Aswan
+TOPSIS,rank_1_site,0.0,0.534,Antofagasta
+TOPSIS,rank_1_site,0.535,1.0,Aswan
+TOPSIS,top2_exactly_pareto_set,0.0,0.904,Antofagasta; Aswan
+VIKOR,rank_1_site,0.0,0.537,Antofagasta
+VIKOR,rank_1_site,0.538,1.0,Aswan
+VIKOR,top2_exactly_pareto_set,0.0,0.954,Antofagasta; Aswan
