@@ -33,18 +33,22 @@ The secondary benchmark source snapshot is immutable Git commit:
 
 ## Permanent archive
 
-The earlier primary-only Zenodo version is:
+The active Zenodo concept DOI for the archive family is:
+
+**DOI: 10.5281/zenodo.22730387**
+
+https://doi.org/10.5281/zenodo.22730387
+
+The currently published primary-analysis version is:
 
 **DOI: 10.5281/zenodo.22730388**
 
 https://doi.org/10.5281/zenodo.22730388
 
-The complete reproducibility version for the current revision, including the secondary all-site MCDM extension, is assigned:
+A new version DOI has been reserved for the secondary extension:
 
-**DOI: 10.5281/zenodo.22737170**
+**Reserved DOI: 10.5281/zenodo.22737170**
 
-https://doi.org/10.5281/zenodo.22737170
-
-The Zenodo concept DOI for all versions is **10.5281/zenodo.22730387**.
+This reserved DOI is not treated as active until the new Zenodo version is published. Until then, the secondary benchmark is supplied with the journal revision and is mirrored at the immutable Git commit above.
 
 Earlier folders/files are retained for provenance but do not supersede the locked primary analysis or the separately pinned secondary benchmark.
