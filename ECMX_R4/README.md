@@ -40,9 +40,9 @@ Revision label: **ECMX-R4**.
 
 The reproducibility materials and reacquired NASA POWER raw-evidence archive are permanently archived in Zenodo:
 
-**DOI: 10.5281/zenodo.22730388**
+**DOI: 10.5281/zenodo.22730737**
 
-https://doi.org/10.5281/zenodo.22730388
+https://doi.org/10.5281/zenodo.22730737
 
 The exact analysis-code snapshot used for the journal resubmission is Git commit:
 
