@@ -1,4 +1,4 @@
-# PIAF Resilience-Aware Survivability / Climate-Risk Intelligence
+# ECMX-D-26-01378 — Historical Climate-Stress PV Pre-Feasibility Reproducibility Archive
 
 This repository contains reproducibility materials for manuscript **ECMX-D-26-01378**, *A Resource-Explicit Historical Climate-Stress Framework for Pre-Feasibility Photovoltaic Infrastructure Screening*.
 
