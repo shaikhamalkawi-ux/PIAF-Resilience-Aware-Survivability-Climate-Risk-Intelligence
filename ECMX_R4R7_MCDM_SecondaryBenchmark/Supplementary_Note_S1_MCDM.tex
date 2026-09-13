@@ -1,0 +1,155 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,booktabs,tabularx,array,longtable,hyperref}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5em}
+\newcolumntype{Y}{>{\raggedleft\arraybackslash}X}
+\begin{document}
+\begin{center}
+{\Large\bfseries Supplementary Note S1}\\[0.35em]
+{\large Secondary all-site WSM, TOPSIS, and VIKOR benchmark}\\[0.35em]
+for manuscript ECMX-D-26-01378
+\end{center}
+
+\section*{S1. Purpose and claim boundary}
+This supplementary benchmark addresses the reproducibility and all-site-comparability concern raised during peer review. It does not replace the main manuscript's Pareto screen and is not presented as independent physical validation. The same ten fixed benchmark locations and the same two decision dimensions used by the primary screen are retained: mean global horizontal irradiance (GHI), for which higher values are preferred, and the historical climate-context summary $C$, for which lower values are preferred. No location, climate input, Pareto calculation, or bootstrap result is changed.
+
+The baseline split $w_R=w_C=0.5$ is a declared diagnostic reference convention. It is not a calibrated physical weighting and it is not an elicited stakeholder preference. A deterministic full-range sensitivity over $\lambda\in[0,1]$ is therefore reported with $w_R=\lambda$ and $w_C=1-\lambda$.
+
+\section*{S2. Common decision matrix}
+For the cross-method common-matrix benchmark, the two criteria are converted to benefit orientation on $[0,1]$ across the fixed ten-site benchmark:
+\begin{equation}
+r_l=\frac{R_l-R_{\min}}{R_{\max}-R_{\min}},\qquad
+c_l=\frac{C_{\max}-C_l}{C_{\max}-C_{\min}}.
+\end{equation}
+Here $R_l$ is the mean-GHI resource quantity from the main manuscript, $C_l$ is the historical climate-context summary, and $\mathbf{y}_l=(r_l,c_l)$ is the secondary benefit-oriented decision vector. This shared min--max representation is used to make WSM, TOPSIS, and VIKOR operate on one declared matrix. A conventional vector-normalized TOPSIS audit is reported separately below because classical TOPSIS is commonly formulated with vector normalization \cite{hwang1981,opricovic2004}.
+
+\section*{S3. WSM}
+The weighted-sum score is
+\begin{equation}
+A_l=\sum_j w_j y_{lj},
+\end{equation}
+with larger values preferred.
+
+\section*{S4. TOPSIS}
+For the shared-matrix TOPSIS benchmark,
+\begin{equation}
+v_{lj}=w_jy_{lj}.
+\end{equation}
+With positive and negative ideal vectors $\mathbf{v}^+$ and $\mathbf{v}^-$, the distances are
+\begin{equation}
+D_l^+=\sqrt{\sum_j (v_{lj}-v_j^+)^2},\qquad
+D_l^-=\sqrt{\sum_j (v_{lj}-v_j^-)^2},
+\end{equation}
+and the closeness coefficient is
+\begin{equation}
+CC_l=\frac{D_l^-}{D_l^+ + D_l^-},
+\end{equation}
+with larger values preferred \cite{hwang1981}.
+
+\section*{S5. VIKOR}
+For benefit-oriented criteria, define the normalized loss
+\begin{equation}
+d_{lj}=\frac{f_j^*-y_{lj}}{f_j^*-f_j^-},
+\end{equation}
+where $f_j^*$ and $f_j^-$ are the best and worst observed values of criterion $j$. The group utility and individual regret are
+\begin{equation}
+S_l=\sum_j w_jd_{lj},\qquad
+\mathcal{R}^{\mathrm{VIKOR}}_l=\max_j(w_jd_{lj}).
+\end{equation}
+The compromise statistic is
+\begin{equation}
+Q_l=v\frac{S_l-S^*}{S^- -S^*}+(1-v)
+\frac{\mathcal{R}^{\mathrm{VIKOR}}_l-\mathcal{R}^*}{\mathcal{R}^- -\mathcal{R}^*},
+\end{equation}
+with $v=0.5$ and smaller $Q_l$ preferred \cite{opricovic2004}.
+
+For $m=10$ alternatives, the acceptable-advantage threshold is $DQ=1/(m-1)=1/9=0.1111$. Condition C1 requires $Q(A_2)-Q(A_1)\ge DQ$. Condition C2 requires $A_1$ also to be best according to $S$ or $\mathcal{R}^{\mathrm{VIKOR}}$. The implemented compromise rule follows the standard three-branch interpretation: if C1 and C2 both hold, $A_1$ is reported; if C1 holds but C2 fails, $A_1$ and $A_2$ are reported; if C1 fails, all leading alternatives satisfying $Q(A_M)-Q(A_1)<DQ$ are retained.
+
+\section*{S6. Equal-weight results}
+Table~\ref{tab:s1_rank} reports all ten locations. At $w_R=w_C=0.5$, all three methods rank Antofagasta first and Aswan second. Rank agreement is high: Spearman $\rho=0.987879$ for WSM--TOPSIS, $0.975758$ for WSM--VIKOR, and $0.963636$ for TOPSIS--VIKOR.
+
+\begin{table}[htbp]
+\centering
+\caption{Complete ten-site secondary MCDM benchmark at the declared 0.5/0.5 reference weighting.}
+\label{tab:s1_rank}
+\scriptsize
+\begin{tabular}{lrrrrrrrr}
+\toprule
+Site & GHI & $C$ & WSM & rank & TOPSIS $CC$ & rank & VIKOR $Q$ & rank \\
+\midrule
+Antofagasta & 6.255 & 0.342 & 0.9223 & 1 & 0.8939 & 1 & 0.0000 & 1 \\
+Aswan & 6.500 & 0.406 & 0.9098 & 2 & 0.8775 & 2 & 0.0236 & 2 \\
+Phoenix & 5.822 & 0.458 & 0.6220 & 3 & 0.6207 & 3 & 0.3719 & 3 \\
+NEOM Bay/Sharma & 6.280 & 0.587 & 0.5851 & 4 & 0.5649 & 4 & 0.5525 & 5 \\
+Ouarzazate & 5.959 & 0.558 & 0.5254 & 5 & 0.5237 & 5 & 0.5445 & 4 \\
+Alice Springs & 6.273 & 0.671 & 0.4648 & 6 & 0.4782 & 6 & 0.7762 & 7 \\
+Abu Dhabi & 5.756 & 0.617 & 0.3777 & 7 & 0.3884 & 7 & 0.7465 & 6 \\
+Jodhpur & 5.501 & 0.622 & 0.2898 & 8 & 0.2957 & 9 & 0.8162 & 8 \\
+Dunhuang & 4.921 & 0.499 & 0.2792 & 9 & 0.3381 & 8 & 0.9494 & 9 \\
+Las Vegas & 5.574 & 0.697 & 0.2068 & 10 & 0.2630 & 10 & 1.0000 & 10 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+For VIKOR, $Q(A_2)-Q(A_1)=0.023615<DQ=0.111111$, so acceptable advantage C1 is not satisfied. C2 is satisfied. The compromise set is therefore Antofagasta and Aswan rather than a unique scalar winner.
+
+\section*{S7. Resource--climate weight sensitivity}
+Table~\ref{tab:s1_sens} summarizes the 0.001 deterministic weight grid. Under the shared min--max common-matrix specification, the rank-one site changes from Antofagasta to Aswan near $\lambda\approx0.53$, whereas the exact two-site set \{Antofagasta, Aswan\} persists over a much wider interval. Thus the shortlist is more stable than the identity of a single compensatory winner.
+
+\begin{table}[htbp]
+\centering
+\caption{Weight-sensitivity intervals on the 0.001 grid.}
+\label{tab:s1_sens}
+\small
+\begin{tabular}{lccc}
+\toprule
+Method & Antofagasta rank-1 & Aswan rank-1 & exact Pareto pair as top two \\
+\midrule
+WSM & 0.000--0.537 & 0.538--1.000 & 0.000--0.977 \\
+TOPSIS & 0.000--0.534 & 0.535--1.000 & 0.000--0.904 \\
+VIKOR & 0.000--0.537 & 0.538--1.000 & 0.000--0.954 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+These switch locations are specification-dependent and are not interpreted as physical thresholds.
+
+\section*{S8. Normalization audit}
+The common decision matrix uses shared min--max normalization so that all three methods operate on identical dimensionless inputs. Because classical TOPSIS is commonly stated with vector normalization \cite{hwang1981,opricovic2004}, a conventional vector-normalized TOPSIS audit was also run. At $w_R=w_C=0.5$, it retains Antofagasta first and Aswan second. Its rank-one switch occurs between $\lambda=0.732$ and $0.733$ on the same 0.001 grid, compared with the shared-min--max TOPSIS switch between $0.534$ and $0.535$. The leading pair is therefore stable at the declared equal-weight reference, but the precise scalar switch is normalization-dependent.
+
+\begin{table}[htbp]
+\centering
+\caption{Rank audit under declared common-matrix and conventional normalization variants.}
+\scriptsize
+\begin{tabular}{lrrrr}
+\toprule
+Site & shared-minmax TOPSIS & vector TOPSIS & shared-minmax VIKOR & raw ideal-gap VIKOR \\
+\midrule
+Abu Dhabi & 7 & 7 & 6 & 6 \\
+Alice Springs & 6 & 8 & 7 & 7 \\
+Antofagasta & 1 & 1 & 1 & 1 \\
+Aswan & 2 & 2 & 2 & 2 \\
+Dunhuang & 8 & 4 & 9 & 9 \\
+Jodhpur & 9 & 9 & 8 & 8 \\
+Las Vegas & 10 & 10 & 10 & 10 \\
+NEOM Bay/Sharma & 4 & 6 & 5 & 5 \\
+Ouarzazate & 5 & 5 & 4 & 4 \\
+Phoenix & 3 & 3 & 3 & 3 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section*{S9. Five-criterion structural diagnostic}
+As a secondary structural diagnostic only, the climate summary was represented by its four already reported normalized components, with total resource weight 0.5 and weights 0.125 for heat, humidity, GHI variability, and wind exposure. Under that representation, all three methods rank Aswan first and Antofagasta second. The change in scalar winner arises from the representation and normalization geometry, not from new evidence. This diagnostic is not used to alter the primary Pareto result.
+
+\section*{S10. Reproducibility}
+The executable script, input table, complete CSV outputs, workbook, and SHA-256 manifest are provided in the R4R7 secondary-benchmark reproducibility folder. The input table is the same locked ten-site table used by the main R4 analysis. The original primary-analysis source snapshot remains Git commit \texttt{89d266e3ea18777ff131f3108690e4fdcd940601}; the secondary benchmark is versioned separately so that it does not rewrite that locked scientific snapshot.
+
+\begin{thebibliography}{9}
+\bibitem{hwang1981} C.-L. Hwang, K. Yoon, \emph{Multiple Attribute Decision Making: Methods and Applications -- A State-of-the-Art Survey}, Springer, Berlin, Heidelberg, 1981. \href{https://doi.org/10.1007/978-3-642-48318-9}{doi:10.1007/978-3-642-48318-9}.
+\bibitem{opricovic2004} S. Opricovic, G.-H. Tzeng, Compromise solution by MCDM methods: A comparative analysis of VIKOR and TOPSIS, \emph{European Journal of Operational Research} 156(2) (2004) 445--455. \href{https://doi.org/10.1016/S0377-2217(03)00020-1}{doi:10.1016/S0377-2217(03)00020-1}.
+\end{thebibliography}
+\end{document}
