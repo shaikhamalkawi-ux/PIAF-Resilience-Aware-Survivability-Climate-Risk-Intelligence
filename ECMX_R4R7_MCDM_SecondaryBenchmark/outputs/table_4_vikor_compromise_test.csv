@@ -1,0 +1,2 @@
+v,DQ,Q_best_site,Q_best,Q_second_site,Q_second,acceptable_advantage_C1,S_best_site,R_best_site,acceptable_stability_C2,compromise_set
+0.5,0.1111111111111111,Antofagasta,0.0,Aswan,0.023614666996635787,False,Antofagasta,Antofagasta,True,Antofagasta; Aswan
